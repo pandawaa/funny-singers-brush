@@ -9,7 +9,7 @@ import routerBindings, {
   DocumentTitleHandler,
   UnsavedChangesNotifier,
 } from "@refinedev/react-router-v6"
-import { dataProvider, liveProvider } from "./providers"
+import { authProvider, dataProvider, liveProvider } from "./providers"
 import { App as AntdApp } from "antd"
 
 import { BrowserRouter, Route, Routes } from "react-router-dom"
@@ -26,7 +26,7 @@ function App() {
               liveProvider={liveProvider}
               notificationProvider={useNotificationProvider}
               routerProvider={routerBindings}
-              // authProvider={authProvider}
+              authProvider={authProvider}
               options={{
                 syncWithLocation: true,
                 warnWhenUnsavedChanges: true,
