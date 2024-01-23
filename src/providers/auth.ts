@@ -44,8 +44,9 @@ export const authProvider: AuthBindings = {
       return {
         success: false,
         error: {
-          message: "message" in error ? error.message : "Login failed",
-          name: "name" in error ? error.name : "Invalid email or password",
+          message: error && "message" in error ? error.message : "Login failed",
+          name:
+            error && "name" in error ? error.name : "Invalid email or password",
         },
       }
     }
