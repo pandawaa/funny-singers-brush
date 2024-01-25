@@ -1,9 +1,4 @@
-import {
-  Authenticated,
-  GitHubBanner,
-  Refine,
-  WelcomePage,
-} from "@refinedev/core"
+import { Authenticated, GitHubBanner, Refine } from "@refinedev/core"
 import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools"
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar"
 
@@ -17,7 +12,7 @@ import routerBindings, {
 } from "@refinedev/react-router-v6"
 import { authProvider, dataProvider, liveProvider } from "./providers"
 import { App as AntdApp } from "antd"
-import { Home, ForgotPassword, Login, Register } from "./pages"
+import { Home, ForgotPassword, Login, Register, CompanyListPage } from "./pages"
 
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom"
 import Layout from "./components/layout"
@@ -62,6 +57,7 @@ function App() {
                   }
                 >
                   <Route index element={<Home />} />
+                  <Route path="/companies" element={<CompanyListPage />} />
                 </Route>
               </Routes>
               <RefineKbar />
