@@ -18,6 +18,7 @@ import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom"
 import Layout from "./components/layout"
 import { resources } from "./config/resources"
 import { Create } from "./pages"
+import EditPage from "./pages/company/edit"
 function App() {
   return (
     <BrowserRouter>
@@ -60,6 +61,7 @@ function App() {
                   <Route path="/companies">
                     <Route index element={<CompanyListPage />} />
                     <Route path="new" element={<Create />} />
+                    <Route path="edit/:id" element={<EditPage />} />
                   </Route>
                 </Route>
               </Routes>
